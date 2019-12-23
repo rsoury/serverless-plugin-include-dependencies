@@ -14,7 +14,7 @@ function ignoreMissing(dependency, optional) {
 
 module.exports = function(filename, serverless) {
 	const servicePath = serverless.config.servicePath;
-	const aliases = serverless.service.custom["module-aliases"] || {};
+	const aliases = serverless.service.custom.moduleAliases || {};
 
 	const filePaths = new Set();
 	const modulePaths = new Set();

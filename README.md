@@ -71,7 +71,7 @@ custom:
   nodeEnv:
     dev: development
     prod: production
-  module-aliases: ${file(./package.json):_moduleAliases}
+  moduleAliases: ${file(./package.json):_moduleAliases}
 ```
 or
 ```yaml
@@ -79,7 +79,7 @@ custom:
   nodeEnv:
     dev: development
     prod: production
-  module-aliases:
+  moduleAliases:
     "@lib": ./lib
     "@test": ./test
 ```
