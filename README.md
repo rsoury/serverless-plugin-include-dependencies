@@ -80,8 +80,8 @@ custom:
     dev: development
     prod: production
   module-aliases:
-    '@lib': ./lib
-    '@test': ./test
+    @lib: ./lib
+    @test: ./test
 ```
 
 ## New In 2.0 - Exclusion Support
