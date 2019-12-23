@@ -63,6 +63,27 @@ package:
 ```
 But be warned: Smaller individual functions can still mean a larger overall deployment. (10 functions that are 3 MB each is more net data tranfer and storage than 1 function that is 6 MB)
 
+## Module Aliases
+For projects using [module-alias](https://www.npmjs.com/package/module-alias), Webpack Alias or some other alias management package, use the `module-aliases` custom property to have it automatically resolved during Serverless packaging.
+
+```yaml
+custom:
+  nodeEnv:
+    dev: development
+    prod: production
+  module-aliases: ${file(./package.json):_moduleAliases}
+```
+or
+```yaml
+custom:
+  nodeEnv:
+    dev: development
+    prod: production
+  module-aliases:
+    '@lib': ./lib
+    '@test': ./test
+```
+
 ## New In 2.0 - Exclusion Support
 
 Rather than including module folders (e.g. `node_modules/foo/**`, it now includes a list of actual files (e.g. `node_modules/foo/package.json`, `node_modules/foo/index.js`) and *uses the serverless package exclude* to filter these files. Excludes *must* start with `node_modules` to be considered by this plugin.
