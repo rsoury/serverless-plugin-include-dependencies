@@ -82,6 +82,9 @@ module.exports = function(filename, serverless) {
 							path.dirname(currentLocalFile),
 							abs
 						);
+						if (resolvedDependency.split("/").length === 1) {
+							resolvedDependency = `./${resolvedDependency}`;
+						}
 					}
 				});
 				return resolvedDependency;
